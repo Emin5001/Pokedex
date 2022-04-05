@@ -1,18 +1,26 @@
+import './PokeCard.css';
 import React from 'react';
 import {
     useState
 } from 'react';
 
-function PokeCard() {
+export function PokeCard() {
     
     return (
-        <div className="poke-card">
-            {/* <h4>{pokemon.name}</h4> */}
-            <div className="poke-img-container">
-                {/* <img src={pokemon.image}/>*/}
-            </div>
-            <div className="poke-data-container">
-                {/* data.map(data to show??) */}
+        <div className="container">
+            <div className="card">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="A photograph of a pokemon"/>
+                <div className="card-data">
+                    <div className="card-name">
+                        {/* {pokemon.name} */}
+                    </div>
+                    <div className="card-specific-data">
+                        <p>Name: Pikachu</p>
+                        <p>Abilities: </p>
+                        <p>Weight: </p>
+                        <p>Height: </p>
+                    </div>
+                </div>  
             </div>
         </div>
     );

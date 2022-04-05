@@ -8,4 +8,5 @@ export async function getPokemon(pokeName){
     const response = await fetch(`${url}pokemon/${pokeName}`);
     const data = await response.json();
     return data;
-}
+};
+

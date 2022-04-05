@@ -1,0 +1,36 @@
+img {
+    width: 100%;
+    border-radius: 12px;
+    height: 214px;
+    object-fit: contain;
+}
+
+.container {
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20vh;
+}
+
+.card {
+    background-color: yellowgreen;
+    border: 1px solid #baccd8;
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.card-name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 16px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 150%;
+    color: #7f8c9b;
+    text-align: left;
+}
+
+.card-data {
+    padding: 16px 8px 8px 8px;
+}
