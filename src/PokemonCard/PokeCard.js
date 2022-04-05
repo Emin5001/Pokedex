@@ -3,9 +3,12 @@ import React from 'react';
 import {
     useState
 } from 'react';
+import getPokemon from '../api/api';
 
 export function PokeCard() {
     
+    let pokemonData = getPokemon("pikachu");
+
     return (
         <div className="container">
             <div className="card">

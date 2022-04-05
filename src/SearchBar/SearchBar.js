@@ -2,19 +2,28 @@ import './SearchBar.css';
 import {
     React,
     useState,
+    createContext,
 } from 'react';
-// import getPokemon from '../api/api';
+
+const PokemonContext = createContext();
 
 export function SearchBar() {
     const [pokemon, setPokemon] = useState("");
 
-    let input = document.getElementById("search-bar").value;
+    function handleChange(event){
+        setPokemon(event.target.value);
+    }
 
     // let pokemonData = getPokemon(input);
 
     return (
         <div id="search-bar-container">
-            <input id="search-bar" type="text" placeholder="Search Pokemon"/>
+            <input 
+            id="search-bar" 
+            type="text" 
+            placeholder="Search Pokemon"
+            onChange={handleChange}
+            />
         </div>
     )
 }
