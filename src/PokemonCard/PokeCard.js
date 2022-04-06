@@ -5,9 +5,11 @@ import {
 } from 'react';
 import getPokemon from '../api/api';
 
-export function PokeCard() {
-    
-    let pokemonData = getPokemon("pikachu");
+export function PokeCard(props) {
+    const { pokemon } = props.pokemon;
+
+    console.log(pokemon);
+    let pokemonData = getPokemon(pokemon);
 
     return (
         <div className="container">
@@ -18,7 +20,7 @@ export function PokeCard() {
                         {/* {pokemon.name} */}
                     </div>
                     <div className="card-specific-data">
-                        <p>Name: Pikachu</p>
+                        <p>Name: </p>
                         <p>Abilities: </p>
                         <p>Weight: </p>
                         <p>Height: </p>
