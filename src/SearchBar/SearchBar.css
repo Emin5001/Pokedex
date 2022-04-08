@@ -6,3 +6,6 @@
     height: 30px;
 };
 
+input[type="text"] {
+    text-transform: lowercase;
+};

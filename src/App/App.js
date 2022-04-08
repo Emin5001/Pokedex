@@ -16,7 +16,9 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar onChange={handleChange}/>
+      <SearchBar
+      onChange={handleChange}/>
+      
       <PokeCard
       pokemon={pokemon}  
       />
