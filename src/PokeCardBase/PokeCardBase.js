@@ -18,7 +18,13 @@ import {
 } from '../api/api';
 
 
-export function PokeCardBase() {
+export function PokeCardBase(props) {
+
+    const {
+        randomPokemonName,
+        pokemonName,
+        assignPokemonInformation,
+    } = props;
 
     const [pokemonList, setPokemonList] = useState([]);
 
@@ -26,12 +32,23 @@ export function PokeCardBase() {
         fullPokemonList().then(res => {
             setPokemonList(res.results);
         })
-        let randomIndex = Math.floor(Math.random() * pokemonList.length);
-
-        console.log(pokemonList[randomIndex]);
+        const randomIndex = Math.floor(Math.random() * pokemonList.length + 1);
+        //i attempted to pass this function as a prop. can we pass functions as props through components?
+        assignPokemonInformation(pokemonName[randomIndex])
     }
 
-    function catchPokemon() {
+    function catchPokemon(pokemonName) {
+        let canCatch = false;
+
+        const catchChance = Math.floor(Math.random() * 1);
+        if (catchChance){
+            canCatch = true;
+            addPokemonToBag(pokemonName);
+        }
+        else { return; };
+    }
+
+    function addPokemonToBag(pokemonName) {
         
     }
 
@@ -43,7 +60,7 @@ export function PokeCardBase() {
                 onClick={getRandomPokemon}></button>
                 <button 
                 id="catch-pokemon"
-                onClick={catchPokemon}></button>
+                onClick={catchPokemon(pokemonName)}></button>
             </div> 
         </div>
     );

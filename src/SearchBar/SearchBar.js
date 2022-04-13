@@ -6,7 +6,6 @@ import {
 export function SearchBar(props) {
 
     const {
-        onChange,
         onEnter
     } = props;
 
@@ -16,15 +15,9 @@ export function SearchBar(props) {
      */
     const pokemonBagStyle = {
         pokemonBag: {
-            height: 30,
+            height: "100%",
             display: "flex",
             justifyContent: "flex-start",
-        },
-
-        searchBar: {
-            backgroundColor: "green",
-            display: "flex",
-            justifyContent: "flex-end",
         }
     }
     
@@ -33,6 +26,7 @@ export function SearchBar(props) {
             <div id="pokemon-bag-container">
                 <img 
                 id="pokemon-bag"
+                class="pk-bag"
                 src="https://cdn.iconscout.com/icon/premium/png-256-thumb/pokemon-egg-games-video-casino-gamer-1-42383.png"
                 alt="A Pokemon Bag"
                 style={pokemonBagStyle.pokemonBag}
@@ -42,9 +36,7 @@ export function SearchBar(props) {
             id="search-bar" 
             type="text" 
             placeholder="Search Pokemon"
-            onChange={onChange}
             onKeyDown={onEnter}
-            style={pokemonBagStyle.searchBar}
             />
         </div>
     )
