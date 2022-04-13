@@ -32,7 +32,7 @@ export function PokeCardBase(props) {
         })
         const randomIndex = Math.floor(Math.random() * pokemonList.length + 1);
         //i attempted to pass this function as a prop. can we pass functions as props through components?
-        assignPokemonInformation(pokemonList[randomIndex])
+        assignPokemonInformation(pokemonList[randomIndex].name)
     }
 
     function catchPokemon(pokemonName) {

@@ -16,10 +16,10 @@ function App() {
     height: "",
   });
 
-  const assignPokemonInformation = (pokemon) => {
-    console.log(pokemon.name);
-    // pokemon = pokemon.toLowerCase();
-    getPokemonByName(pokemon.name)
+  const assignPokemonInformation = (pokemonName) => {
+    console.log(pokemonName);
+    pokemonName = pokemonName.toLowerCase();
+    getPokemonByName(pokemonName)
       .then((res) => {
         setPokemon({
           name: res.name,
