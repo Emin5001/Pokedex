@@ -5,7 +5,7 @@ import {
 import './App.css';
 import { SearchBar } from '../SearchBar/SearchBar';
 import { PokeCard } from '../PokemonCard/PokeCard';
-import { getPokemon } from '../api/api';
+import { getPokemonByName } from '../api/api';
 
 function App() {
 
@@ -16,11 +16,10 @@ function App() {
     height: "",
   });
 
-  /**
-   * PUT THIS INTO UTLS.JS
-   */
   const assignPokemonInformation = (pokemon) => {
-    getPokemon(pokemon)
+    console.log(pokemon.name);
+    // pokemon = pokemon.toLowerCase();
+    getPokemonByName(pokemon.name)
       .then((res) => {
         setPokemon({
           name: res.name,

@@ -8,7 +8,7 @@ returning that data
 */
 
 //going to need to decide between axios and fetch
-export async function getPokemon(pokeName) {
+export async function getPokemonByName(pokeName) {
     return await axios.get(`${url}pokemon/${pokeName}`)
         .then(res => {
             return res.data; 
@@ -22,7 +22,7 @@ export async function getPokemon(pokeName) {
 //pokemon?limit=1125&offset=0
 //assign res to list and then get random
 //pokemon # and pick from that list
-export async function fullPokemonList() {
+export async function getFullPokemonList() {
     return await axios.get(`${url}pokemon?limit=1125`)
         .then(res => {
             //handle success

@@ -9,35 +9,25 @@ export function SearchBar(props) {
         onEnter
     } = props;
 
-    /**
-     * PROBLEM: The css in the .css
-     * file just doesn't work. 
-     */
-    const pokemonBagStyle = {
-        pokemonBag: {
-            height: "100%",
-            display: "flex",
-            justifyContent: "flex-start",
-        }
-    }
     
     return (
-        <div id="search-bar-container"> 
-            <div id="pokemon-bag-container">
-                <img 
-                id="pokemon-bag"
-                class="pk-bag"
-                src="https://cdn.iconscout.com/icon/premium/png-256-thumb/pokemon-egg-games-video-casino-gamer-1-42383.png"
-                alt="A Pokemon Bag"
-                style={pokemonBagStyle.pokemonBag}
+        <div className="banner-container">
+            <img src="http://www.warpzoned.com/wp-content/uploads/2013/02/pokemon-header.jpg" alt="Pokemon Banner"/>
+            <div className="search-bar-container"> 
+                <div className="pokemon-bag-container">
+                    <img 
+                    id="pokemon-bag"
+                    src="https://cdn.iconscout.com/icon/premium/png-256-thumb/pokemon-egg-games-video-casino-gamer-1-42383.png"
+                    alt="A Pokemon Bag"
+                    />
+                </div>
+                <input 
+                id="search-bar" 
+                type="text" 
+                placeholder="Search Pokemon"
+                onKeyDown={onEnter}
                 />
             </div>
-            <input 
-            id="search-bar" 
-            type="text" 
-            placeholder="Search Pokemon"
-            onKeyDown={onEnter}
-            />
         </div>
     )
 }

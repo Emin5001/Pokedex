@@ -8,12 +8,9 @@ import { PokeCardBase } from '../PokeCardBase/PokeCardBase';
 export function PokeCard(props) {
 
     const {
-        pokemon
+        pokemon,
+        assignPokemonInformation,
     } = props;
-
-    const [randomPokemonName, setRandomPokemonName] = useState("");
-
-    console.log(randomPokemonName);
 
     return (   
         <div className="container">
@@ -34,8 +31,8 @@ export function PokeCard(props) {
             </div>
 
             <PokeCardBase
-            randomPokemonName={randomPokemonName}
             pokemon={pokemon}
+            assignPokemonInformation={assignPokemonInformation}
             />
         </div>
     );
