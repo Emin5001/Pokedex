@@ -9,17 +9,13 @@ returning that data
 
 //going to need to decide between axios and fetch
 export async function getPokemon(pokeName) {
-    return await axios.get(`${url}pokemon/pikachu`)
+    return await axios.get(`${url}pokemon/${pokeName}`)
         .then(res => {
-            console.log(res.data.name); //this works
-            return res.data; //this returns a promise, and how do i access the "value" inside of a promise?
+            return res.data; 
         }) 
         .catch(error => {
             console.error(error);
         })
-    // const res = await axios.get(`${url}pokemon/pikachu`);
-    // console.log(res.data);
-    // return res.data;
 }
 
 //for evolutions, use /evolution-chain/{param}

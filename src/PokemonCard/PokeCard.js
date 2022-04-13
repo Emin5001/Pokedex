@@ -1,28 +1,32 @@
 import './PokeCard.css';
-import React from 'react';
-import {getPokemon} from '../api/api';
+import {
+    React,
+    useState,
+} from 'react';
 
 export function PokeCard(props) {
-    const { pokemon } = props.pokemon;
 
-    let pokemonData = getPokemon(pokemon);
-    console.log(pokemonData);
+    const {
+        pokemonName, 
+        pokemonImage,
+        weight,
+        height,
+    } = props;
 
     return (   
         <div className="container">
             <div className="card">
-                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="A photograph of a pokemon"/>
+                <img src={pokemonImage} alt="A photograph of a pokemon"/>
                 <div className="card-data">
                     <div className="card-name">
-                        {/* <h2>
-                            {pokemonData.name}
-                        </h2> */}
+                        <h2>
+                            {pokemonName[0].toUpperCase() + pokemonName.substring(1)}
+                        </h2> 
                     </div>
                     <div className="card-specific-data">
-                        <p>Name: </p>
-                        <p>Abilities: </p>
-                        <p>Weight: </p>
-                        <p>Height: </p>
+                        <p>Name: {pokemonName[0].toUpperCase() + pokemonName.substring(1)}</p>
+                        <p>Height: {height}</p>
+                        <p>Weight: {weight}</p>
                     </div>
                 </div>  
             </div>

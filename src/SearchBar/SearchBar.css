@@ -1,11 +1,27 @@
 #search-bar-container {
     display: flex;
-    justify-content: flex-end;
-    margin-right: 20px;
-    margin-top: 20px;
+    margin: 20px 20px;
     height: 30px;
+    background-color: black;
 };
 
-input[type="text"] {
+#search-bar-container #pokemon-bag-container #pokemon-bag {
+    display: flex;
+    justify-content: flex-end;
+    height: 200px;
+    width: 30px;
+
+    background-color: blue;
+}
+
+#search-bar-container #search-bar {
     text-transform: lowercase;
+    justify-content: flex-end;
+    height: 20px;
+    background-color: blue;
+
 };
+
+#pokemon-bag {
+
+}

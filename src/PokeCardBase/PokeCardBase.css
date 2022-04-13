@@ -1,0 +1,19 @@
+#random-pokemon {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: yellow;
+    margin-right: 5px;
+}
+
+#catch-pokemon {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: red;
+    margin-left: 5px;
+}
+
+#card-base {
+    margin-top: 10px;
+}
