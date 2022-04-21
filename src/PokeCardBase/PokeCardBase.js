@@ -13,52 +13,70 @@ import {
 
 import {
     getFullPokemonList,
-    getPokemonByName
 } from '../api/api';
 
+import {
+    FaRandom,
+} from 'react-icons/fa';
+
+// import {
+//     CgPokemon
+// } from 'css.gg'
 
 export function PokeCardBase(props) {
-
     const {
-        pokemonName,
+        pokemon,
         assignPokemonInformation,
+        pokemonBag,
     } = props;
 
-    const [pokemonList, setPokemonList] = useState([]);
 
+    const [pokemonList, setPokemonList] = useState([]);
+    
     function getRandomPokemon() {
         getFullPokemonList().then(res => {
-            setPokemonList(res.results);
-        })
+            setPokemonList(res.results)
+        });
+
         const randomIndex = Math.floor(Math.random() * pokemonList.length + 1);
-        //i attempted to pass this function as a prop. can we pass functions as props through components?
         assignPokemonInformation(pokemonList[randomIndex].name)
     }
 
-    function catchPokemon(pokemonName) {
-        let canCatch = false;
+    //want to use something like componentDidMount in order to
+    //make a random pokemon appear every time the user loads the page.
+    
+    // useEffect(() => {
+    //     getRandomPokemon();
+    // }, []);
 
-        const catchChance = Math.floor(Math.random() * 1);
-        if (catchChance){
-            canCatch = true;
-            addPokemonToBag(pokemonName);
+    function catchPokemon(pokemon) {
+        let catchChance = Math.floor(Math.random() * 10);
+        console.log(`Catch chance for ${pokemon.name} is ${catchChance}`)
+        if (catchChance >= 5){
+            // window.alert("You have caught this pokemon!")
+            addPokemonToBag(pokemon);
         }
-        else { return; };
+        else { 
+            return; 
+        };
     }
 
-    function addPokemonToBag(pokemonName) {
-        
+    function addPokemonToBag(pokemon) {
+        pokemonBag.push(pokemon);
+        console.log(pokemonBag);
     }
 
     return (
         <div id="card-base">
             <div id="pokemon-bttn-containers">
-                <button 
+                <FaRandom 
+                onClick={() => getRandomPokemon()}
                 id="random-pokemon"
-                onClick={getRandomPokemon}></button>
-                <button 
+                />
+                <button
                 id="catch-pokemon"
-                onClick={catchPokemon(pokemonName)}></button>
+                onClick={() => catchPokemon(pokemon)}
+                />
             </div> 
         </div>
     );

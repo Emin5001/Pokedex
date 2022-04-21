@@ -10,6 +10,7 @@ export function PokeCard(props) {
     const {
         pokemon,
         assignPokemonInformation,
+        pokemonBag,
     } = props;
 
     return (   
@@ -33,6 +34,7 @@ export function PokeCard(props) {
             <PokeCardBase
             pokemon={pokemon}
             assignPokemonInformation={assignPokemonInformation}
+            pokemonBag={pokemonBag}
             />
         </div>
     );

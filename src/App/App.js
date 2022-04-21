@@ -16,8 +16,9 @@ function App() {
     height: "",
   });
 
+  const [pokemonBag, setPokemonBag] = useState([]);
+
   const assignPokemonInformation = (pokemonName) => {
-    console.log(pokemonName);
     pokemonName = pokemonName.toLowerCase();
     getPokemonByName(pokemonName)
       .then((res) => {
@@ -49,11 +50,12 @@ function App() {
     <div className="App">
       <SearchBar
       onEnter={searchPokemonOnEnter}
+      pokemonBag={pokemonBag}
       />
-      
       <PokeCard
       pokemon={pokemon}  
       assignPokemonInformation={assignPokemonInformation}
+      pokemonBag={pokemonBag}
       />
     </div>
   );

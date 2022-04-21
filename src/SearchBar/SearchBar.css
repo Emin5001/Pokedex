@@ -1,27 +1,33 @@
-/* .banner-container {
-    background-image: url("../img/pokemonlogo.png")
-} */
+:root {
+    --pokemon-yellow: #ffcb05;
+    --pokemon-blue: #2a75bb;
+    --pokemon-red: #cc0000;
+}
+
+.banner-container {
+    background-color: var(--pokemon-red);
+}
 
 .search-bar-container {
     display: flex;
-    margin: 20px 20px;
     height: 50px;
-    border: 2px solid black;
-    background-color: black;
+    background-color: var(--pokemon-yellow);
 }
-
 
 .pokemon-bag-container {
     height: 100%;
     display: flex;
-    justify-content: flex-end;
-    margin-left: 0;
 }
 
-.search-bar {
-    text-transform: lowercase;
-    height: 50%;
-    margin-top: 10px;
-    margin-bottom: 12.5px;
-    margin-left: 72%;
+.pokemon-blue-container {
+    background-color: var(--pokemon-blue);
+    height: 100px;
 }
+
+#search-bar {
+    text-transform: lowercase;
+    height: 90%;
+    margin-left: 84%;
+}
+
+
