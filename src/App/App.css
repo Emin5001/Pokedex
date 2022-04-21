@@ -2,3 +2,16 @@
   text-align: center;
 }
 
+.left-of-card {
+  float: left;
+  padding-left: 20%;  
+  margin-top: 10%;
+  height: 20px;
+}
+
+.right-of-card {
+  float: right;
+  padding-right: 20%;
+  margin-top: -10%;
+  height: 20px;
+}

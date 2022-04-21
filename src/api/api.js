@@ -32,5 +32,7 @@ export async function getFullPokemonList() {
             //handle failure
             console.error(error);
         })
-
 }
+/***
+ * Make method to grab evolutions.
+ */

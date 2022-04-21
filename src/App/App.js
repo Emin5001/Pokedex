@@ -6,6 +6,10 @@ import './App.css';
 import { SearchBar } from '../SearchBar/SearchBar';
 import { PokeCard } from '../PokemonCard/PokeCard';
 import { getPokemonByName } from '../api/api';
+import {
+  FiArrowLeftCircle,
+  FiArrowRightCircle
+} from 'react-icons/fi'
 
 function App() {
 
@@ -54,10 +58,18 @@ function App() {
       onEnter={searchPokemonOnEnter}
       pokemonBag={pokemonBag}
       />
+      <FiArrowLeftCircle
+      className="left-of-card"
+      size={70}
+      />
       <PokeCard
       pokemon={pokemon}  
       assignPokemonInformation={assignPokemonInformation}
       pokemonBag={pokemonBag}
+      />
+      <FiArrowRightCircle
+      className="right-of-card"
+      size={70}
       />
     </div>
   );
