@@ -9,6 +9,8 @@ import './PokeCardBase.css';
 import {   
     React, 
     useState,
+    useEffect,
+    useCallback
 } from 'react';
 
 import {
@@ -33,21 +35,28 @@ export function PokeCardBase(props) {
 
     const [pokemonList, setPokemonList] = useState([]);
     
-    function getRandomPokemon() {
-        getFullPokemonList().then(res => {
+    // function getRandomPokemon() {
+    //     getFullPokemonList().then(res => {
+    //         setPokemonList(res.results)
+    //     })
+    //     const randomIndex = Math.floor(Math.random() * pokemonList.length + 1);
+    //     assignPokemonInformation(pokemonList[randomIndex].name)
+    // }
+
+    const getRandomPokemon = async () => {
+        await getFullPokemonList().then(res => {
             setPokemonList(res.results)
         });
-
+        
         const randomIndex = Math.floor(Math.random() * pokemonList.length + 1);
         assignPokemonInformation(pokemonList[randomIndex].name)
     }
-
     //want to use something like componentDidMount in order to
     //make a random pokemon appear every time the user loads the page.
     
-    // useEffect(() => {
-    //     getRandomPokemon();
-    // }, []);
+    useEffect(() => {
+        getRandomPokemon();
+    }, []);
 
     function catchPokemon(pokemon) {
         let catchChance = Math.floor(Math.random() * 10);

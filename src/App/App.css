@@ -2,16 +2,19 @@
   text-align: center;
 }
 
+.card-evolution {
+  display: flex;
+  flex-direction: row;
+}
+
 .left-of-card {
-  float: left;
-  padding-left: 20%;  
-  margin-top: 10%;
+  padding-left: 20%;
+  padding-top: 50px;
   height: 20px;
 }
 
 .right-of-card {
-  float: right;
   padding-right: 20%;
-  margin-top: -10%;
+  padding-top: 50px;
   height: 20px;
 }

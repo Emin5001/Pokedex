@@ -24,14 +24,12 @@ export function SearchBar(props) {
                 className="pokemon-bag-dropdown-container"
                 pokemonBag={pokemonBag}
                 />
-                <div className="search-bar-container"> 
-                    <input 
+                <input 
                     id="search-bar" 
                     type="text" 
                     placeholder="Search Pokemon"
                     onKeyDown={onEnter}
                     />
-                </div>
             </div>
             <div className="pokemon-blue-container"></div>
         </div>

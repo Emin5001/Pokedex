@@ -36,3 +36,6 @@ export async function getFullPokemonList() {
 /***
  * Make method to grab evolutions.
  */
+export async function getPokemonEvolutionList(pokeName) {
+
+}

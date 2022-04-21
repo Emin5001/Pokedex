@@ -1,6 +1,7 @@
 import {
   React,
   useState,
+  useEffect
 } from 'react';
 import './App.css';
 import { SearchBar } from '../SearchBar/SearchBar';
@@ -52,25 +53,23 @@ function App() {
     }
   };
 
+
   return (
     <div className="App">
       <SearchBar
       onEnter={searchPokemonOnEnter}
       pokemonBag={pokemonBag}
       />
-      <FiArrowLeftCircle
-      className="left-of-card"
-      size={70}
-      />
-      <PokeCard
-      pokemon={pokemon}  
-      assignPokemonInformation={assignPokemonInformation}
-      pokemonBag={pokemonBag}
-      />
-      <FiArrowRightCircle
-      className="right-of-card"
-      size={70}
-      />
+      <div className="card-evolution">
+        <FiArrowLeftCircle className="left-of-card" size={70} />
+        <PokeCard
+          pokemon={pokemon}
+          assignPokemonInformation={assignPokemonInformation}
+          pokemonBag={pokemonBag}
+        />
+        <FiArrowRightCircle className="right-of-card" size={70} />
+      </div>
+
     </div>
   );
 }

@@ -13,6 +13,10 @@ export function PokeCard(props) {
         pokemonBag,
     } = props;
 
+    const capitalizeName = (pokemonName) => {
+        return pokemonName[0].toUpperCase() + pokemonName.substring(1)
+    }
+
     return (   
         <div className="container">
             <div className="card">
@@ -20,11 +24,11 @@ export function PokeCard(props) {
                 <div className="card-data">
                     <div className="card-name">
                         <h2>
-                            {pokemon.name[0].toUpperCase() + pokemon.name.substring(1)}
+                            {capitalizeName(pokemon.name)}
                         </h2> 
                     </div>
                     <div className="card-specific-data">
-                        <p>Name: {pokemon.name[0].toUpperCase() + pokemon.name.substring(1)}</p>
+                        <p>Name: {capitalizeName(pokemon.name)}</p>
                         <p>Height: {pokemon.height}</p>
                         <p>Weight: {pokemon.weight}</p>
                     </div>
