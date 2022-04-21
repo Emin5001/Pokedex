@@ -1,7 +1,6 @@
 import './PokeCard.css';
 import {
     React,
-    useState,
 } from 'react';
 import { PokeCardBase } from '../PokeCardBase/PokeCardBase';
 

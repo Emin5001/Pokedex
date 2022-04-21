@@ -4,14 +4,22 @@
     --pokemon-red: #cc0000;
 }
 
+.overall-container {
+    display: block;
+}
+
 .banner-container {
     background-color: var(--pokemon-red);
+}
+
+.pokemon-bag-search-bar-container {
+    background-color: var(--pokemon-yellow);
+
 }
 
 .search-bar-container {
     display: flex;
     height: 50px;
-    background-color: var(--pokemon-yellow);
 }
 
 

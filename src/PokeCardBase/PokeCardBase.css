@@ -15,3 +15,10 @@
 #card-base {
     margin-top: 10px;
 }
+
+
+.button {
+    float:left;
+    margin-left: 35%;
+    position: relative;
+}

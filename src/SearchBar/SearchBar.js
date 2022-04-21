@@ -19,21 +19,21 @@ export function SearchBar(props) {
                 alt="Pokemon Banner" 
                 style={{height: "100px"}}/>
             </div>
-            <PokemonBagDropdown
-            className="pokemon-bag-dropdown"
-            pokemonBag={pokemonBag}
-            />
-            <div className="search-bar-container"> 
-            <input 
-            id="search-bar" 
-            type="text" 
-            placeholder="Search Pokemon"
-            onKeyDown={onEnter}
-            />
+            <div className="pokemon-bag-search-bar-container">
+                <PokemonBagDropdown
+                className="pokemon-bag-dropdown-container"
+                pokemonBag={pokemonBag}
+                />
+                <div className="search-bar-container"> 
+                    <input 
+                    id="search-bar" 
+                    type="text" 
+                    placeholder="Search Pokemon"
+                    onKeyDown={onEnter}
+                    />
+                </div>
             </div>
-            <div className="pokemon-blue-container">
-
-            </div>
+            <div className="pokemon-blue-container"></div>
         </div>
 
     )
