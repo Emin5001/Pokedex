@@ -32,3 +32,9 @@ p {
 .card-data {
     padding: 16px 8px 8px 8px;
 }
+
+.button {
+    float:left;
+    margin-left: 35%;
+    position: relative;
+}

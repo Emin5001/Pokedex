@@ -8,8 +8,8 @@ export function PokemonBagDropdown(props) {
     } = props
     
     const pokemonBagDropdown = () => {
-        document.getElementById("pokemon-bag").classList.toggle("show");
-        console.log("hey")
+        document.getElementById("individual-pokemon-bag-content")
+        pokemonBag.map(e => console.log(e.name));
     }
 
     return (
@@ -27,6 +27,7 @@ export function PokemonBagDropdown(props) {
                     {pokemonBag.map(element => {
                         return (
                             <PokeCard
+                            id="individual-pokemon-bag-content"
                             pokemon={element}
                             />
                         )

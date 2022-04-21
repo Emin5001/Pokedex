@@ -70,10 +70,12 @@ export function PokeCardBase(props) {
                 <FaRandom 
                 onClick={() => getRandomPokemon()}
                 id="random-pokemon"
+                className="button"
                 />
                 <button
                 id="catch-pokemon"
                 onClick={() => catchPokemon(pokemon)}
+                className="button"
                 />
             </div> 
         </div>
