@@ -9,34 +9,29 @@ export function PokemonBagDropdown(props) {
     
     const pokemonBagDropdown = () => {
         document.getElementById("pokemon-bag").classList.toggle("show");
-
+        console.log("hey")
     }
 
     return (
         <div className="pokemon-bag-container">
-                    <button 
-                    id="pokemon-bag-button-container"
-                    className="pokemon-bag-button-container">
-                        <img 
-                        id="pokemon-bag"
-                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/pokemon-egg-games-video-casino-gamer-1-42383.png"
-                        alt="A Pokemon Bag"
-                        style={{height: "100%"}}
-                        onClick={pokemonBagDropdown}
-                        />
-                    </button>
-                    <div 
-                    id="pokemon-bag-contents"
-                    className="pokemon-bag-contents">
-                        {pokemonBag.map(element => {
-                            return (
-                                <PokeCard
-                                pokemon={element}
-                                />
-                            )
+            <img 
+            id="pokemon-bag"
+            src="https://cdn.iconscout.com/icon/premium/png-256-thumb/pokemon-egg-games-video-casino-gamer-1-42383.png"
+            alt="A Pokemon Bag"
+            style={{height: "50px"}}
+            onClick={pokemonBagDropdown}
+            />
+                <div 
+                id="pokemon-bag-contents"
+                className="pokemon-bag-contents">
+                    {pokemonBag.map(element => {
+                        return (
+                            <PokeCard
+                            pokemon={element}
+                            />
+                        )
                         })}
-                    </div>
-
-                    </div>
+                </div>
+        </div>
     )
 }
