@@ -14,6 +14,9 @@ export function PokeCard(props) {
 
     return (   
         <div className="container">
+            <div className="left-of-card">
+                
+            </div>
             <div className="card">
                 <img src={pokemon.image} alt="A photograph of a pokemon"/>
                 <div className="card-data">
@@ -27,7 +30,10 @@ export function PokeCard(props) {
                         <p>Height: {pokemon.height}</p>
                         <p>Weight: {pokemon.weight}</p>
                     </div>
-                </div>  
+                </div> 
+                <div className="right-of-card">
+
+                </div> 
             </div>
 
             <PokeCardBase

@@ -18,13 +18,14 @@ function App() {
 
   const [pokemonBag, setPokemonBag] = useState([]);
 
-  const assignPokemonInformation = (pokemonName) => {
+  const assignPokemonInformation = async (pokemonName) => {
     pokemonName = pokemonName.toLowerCase();
-    getPokemonByName(pokemonName)
+    await getPokemonByName(pokemonName)
       .then((res) => {
+        console.log(res);
         setPokemon({
           name: res.name,
-          image: res.sprites.front_default,
+          image: res.sprites.other['official-artwork'].front_default,
           weight: res.weight,
           height: res.height,
         });
@@ -33,6 +34,7 @@ function App() {
         window.alert("This pokemon doesn't exist! Maybe check your spelling?");
       });
   };
+
 
   /**
    * This function is called whenever the 
