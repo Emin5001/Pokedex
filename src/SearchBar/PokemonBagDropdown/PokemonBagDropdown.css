@@ -1,0 +1,18 @@
+.pokemon-bag-container {
+    height: 100%;
+    display: inline-block;
+}
+
+.pokemon-bag-contents {
+    display: none;
+    position: absolute;
+    min-width: 50px;
+}
+
+.show {
+    display: block;
+}
+
+.pokemon-bag-button-container {
+    height: 50px;
+}

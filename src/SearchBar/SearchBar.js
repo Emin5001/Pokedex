@@ -1,4 +1,5 @@
 import './SearchBar.css';
+import {PokemonBagDropdown} from './PokemonBagDropdown/PokemonBagDropdown';
 import {
     React
 } from 'react';
@@ -6,10 +7,10 @@ import {
 export function SearchBar(props) {
 
     const {
-        onEnter
+        onEnter,
+        pokemonBag
     } = props;
 
-    
     return (
         <div className="overall-container">
             <div className="banner-container">
@@ -18,20 +19,11 @@ export function SearchBar(props) {
                 alt="Pokemon Banner" 
                 style={{height: "100px"}}/>
             </div>
+            <PokemonBagDropdown
+            className="pokemon-bag-dropdown"
+            pokemonBag={pokemonBag}
+            />
             <div className="search-bar-container"> 
-                <div className="pokemon-bag-container">
-                    <button className="pokemon-bag-button-container">
-                        <img 
-                        id="pokemon-bag"
-                        src="https://cdn.iconscout.com/icon/premium/png-256-thumb/pokemon-egg-games-video-casino-gamer-1-42383.png"
-                        alt="A Pokemon Bag"
-                        style={{height: "100%"}}
-                        />
-                    </button>
-                    <div className="pokemon-bag-contents">
-                        
-                    </div>
-                </div>
             <input 
             id="search-bar" 
             type="text" 

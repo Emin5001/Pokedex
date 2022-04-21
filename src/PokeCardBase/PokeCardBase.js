@@ -51,9 +51,8 @@ export function PokeCardBase(props) {
 
     function catchPokemon(pokemon) {
         let catchChance = Math.floor(Math.random() * 10);
-        console.log(`Catch chance for ${pokemon.name} is ${catchChance}`)
         if (catchChance >= 5){
-            // window.alert("You have caught this pokemon!")
+            window.alert("You have caught this pokemon!")
             addPokemonToBag(pokemon);
         }
         else { 
@@ -63,7 +62,6 @@ export function PokeCardBase(props) {
 
     function addPokemonToBag(pokemon) {
         pokemonBag.push(pokemon);
-        console.log(pokemonBag);
     }
 
     return (

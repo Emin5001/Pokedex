@@ -14,10 +14,6 @@
     background-color: var(--pokemon-yellow);
 }
 
-.pokemon-bag-container {
-    height: 100%;
-    display: flex;
-}
 
 .pokemon-blue-container {
     background-color: var(--pokemon-blue);
@@ -30,4 +26,6 @@
     margin-left: 84%;
 }
 
-
+.pokemon-bag-dropdown {
+    display: inline-flex;
+}
