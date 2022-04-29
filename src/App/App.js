@@ -6,7 +6,7 @@ import {
 import './App.css';
 import { SearchBar } from '../SearchBar/SearchBar';
 import { PokeCard } from '../PokemonCard/PokeCard';
-import { getPokemonByName } from '../api/api';
+import { getPokemonByName, getPokemonEvolutionList } from '../api/api';
 import {
   FiArrowLeftCircle,
   FiArrowRightCircle
@@ -19,6 +19,12 @@ function App() {
     image: "",
     weight: "",
     height: "",
+    id: 0,
+  });
+
+  const [pokemonEvolution, setPokemonEvolution] = useState({
+    evolvesTo: "",
+    evolvesFrom: "",
   });
 
   const [pokemonBag, setPokemonBag] = useState([]);
@@ -27,19 +33,37 @@ function App() {
     pokemonName = pokemonName.toLowerCase();
     await getPokemonByName(pokemonName)
       .then((res) => {
-        console.log(res);
         setPokemon({
           name: res.name,
           image: res.sprites.other['official-artwork'].front_default,
           weight: res.weight,
           height: res.height,
+          id: res.id,
         });
       })
       .catch((error) => {
         window.alert("This pokemon doesn't exist! Maybe check your spelling?");
       });
+      console.log(pokemon.id);
+      getPokemonEvolution(pokemon.id);
   };
 
+  const getPokemonEvolution = async (id) => {
+    await getPokemonEvolutionList(id)
+      .then((res) => {
+        console.log(res);
+        setPokemonEvolution({
+          // evolvesTo: res.chain.evolves_to[0].species.name,
+          evolvesTo: res.chain.evolves_to[0].species.name,
+        });
+        console.log(pokemonEvolution);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+    
+  }
 
   /**
    * This function is called whenever the 

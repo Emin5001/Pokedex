@@ -36,6 +36,12 @@ export async function getFullPokemonList() {
 /***
  * Make method to grab evolutions.
  */
-export async function getPokemonEvolutionList(pokeName) {
-
+export async function getPokemonEvolutionList(id) {
+    return await axios.get(`${url}evolution-chain/${id}/`)
+        .then(res => {
+            return res.data;
+        })
+        .catch(error => {
+            console.error(error);
+        })
 }
