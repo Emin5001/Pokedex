@@ -29,8 +29,8 @@ export function PokeCard(props) {
                     </div>
                     <div className="card-specific-data">
                         <p>Name: {capitalizeName(pokemon.name)}</p>
-                        <p>Height: {pokemon.height}</p>
-                        <p>Weight: {pokemon.weight}</p>
+                        <p>Height: {pokemon.height} Inches</p>
+                        <p>Weight: {pokemon.weight} Pounds</p>
                     </div>
                 </div> 
             </div>

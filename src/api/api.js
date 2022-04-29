@@ -45,3 +45,20 @@ export async function getPokemonEvolutionList(id) {
             console.error(error);
         })
 }
+
+export async function getCompleteEvolutionList() {
+    return await axios.get(`${url}evolution-chain`)
+        .then (res => {
+            return res.data;
+        })
+}
+
+export async function getPreviousEvolution(id) {
+    return await axios.get(`${url}evolution-chain/${id}`)
+        .then((res) => {
+            let evolutionData = {
+                evolvesTo: res.data.evolves_to[0].species.name,
+                
+            }
+        })
+}

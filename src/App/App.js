@@ -6,7 +6,7 @@ import {
 import './App.css';
 import { SearchBar } from '../SearchBar/SearchBar';
 import { PokeCard } from '../PokemonCard/PokeCard';
-import { getPokemonByName, getPokemonEvolutionList } from '../api/api';
+import { getPokemonByName, getPokemonEvolutionList, getCompleteEvolutionList } from '../api/api';
 import {
   FiArrowLeftCircle,
   FiArrowRightCircle
@@ -21,6 +21,22 @@ function App() {
     height: "",
     id: 0,
   });
+
+  const [previousPokemon, setPreviousPokemon] = useState({
+    name: "",
+    image: "",
+    weight: "",
+    height: "",
+    id: 0,
+  })
+
+  const [nextPokemon, setNextPokemon] = useState({
+    name: "",
+    image: "",
+    weight: "",
+    height: "",
+    id: 0,
+  })
 
   const [pokemonEvolution, setPokemonEvolution] = useState({
     evolvesTo: "",
@@ -44,10 +60,21 @@ function App() {
       .catch((error) => {
         window.alert("This pokemon doesn't exist! Maybe check your spelling?");
       });
-      console.log(pokemon.id);
       getPokemonEvolution(pokemon.id);
   };
 
+  /**
+   * The ID of a pokemon, and the ID used to
+   * get the evolution chain are DIFFERENT ID's.
+   * For instance, when I use ID of Charmander (4)
+   * into the evolution-chain API call, it gets
+   * the evolution chain of ANOTHER ENTIRELY DIFFERENT
+   * pokemon, Metapod (ID 2). The ID's for the Evolution
+   * chains are dependent on which evolution chain it is on. 
+   * For instance, Charmander -> Charmeleon -> Charizard is a
+   * evolution chain ID of 2, but they are independently all 
+   * different ID's. 
+   */
   const getPokemonEvolution = async (id) => {
     await getPokemonEvolutionList(id)
       .then((res) => {
@@ -56,13 +83,15 @@ function App() {
           // evolvesTo: res.chain.evolves_to[0].species.name,
           evolvesTo: res.chain.evolves_to[0].species.name,
         });
-        console.log(pokemonEvolution);
       })
       .catch(error => {
         console.error(error);
       });
 
-    
+    // await getCompleteEvolutionList()
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
   }
 
   /**
@@ -85,13 +114,27 @@ function App() {
       pokemonBag={pokemonBag}
       />
       <div className="card-evolution">
+        {/* <PokeCard 
+          id="previous-evolution"
+          pokemon={previousPokemon}
+          assignPokemonInformation={assignPokemonInformation}
+          pokemonBag={pokemonBag}
+        /> */}
         <FiArrowLeftCircle className="left-of-card" size={70} />
         <PokeCard
+          id="current-evolution"
           pokemon={pokemon}
           assignPokemonInformation={assignPokemonInformation}
           pokemonBag={pokemonBag}
         />
+
         <FiArrowRightCircle className="right-of-card" size={70} />
+        {/* <PokeCard 
+          id="next-evolution"
+          pokemon={nextPokemon}
+          assignPokemonInformation={assignPokemonInformation}
+          pokemonBag={pokemonBag}
+        /> */}
       </div>
 
     </div>
